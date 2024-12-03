@@ -285,12 +285,18 @@ function Form() {
             margin: '0 auto',
             top: 20,
             marginBottom: 20,
+            boxSizing: 'border-box',
             
           }}>
             <label style={
               {
                 textAlign: 'left', width: '100%',
                 height: '100vh',
+                position: 'relative',
+                
+                left: -200,
+                top: 0,
+                right: 0,
 
               }}>Conclusão Diagnóstica</label>
             <textarea
@@ -298,7 +304,7 @@ function Form() {
               value={conclusaoData}
               onChange={(e) => setConclusaoData(e.target.value)}
               style={{
-                width: '150%', height: '100px', boxSizing: 'border-box',
+                width: '126%', height: '100px', boxSizing: 'border-box',
                 resize: 'none',
 
               }}
@@ -312,7 +318,7 @@ function Form() {
               display: 'flex',
               justifyContent: 'center',
             }}>
-            <button>Salvar</button>
+            <button>Terminar Consulta e Salvar</button>
             
             </div>
            

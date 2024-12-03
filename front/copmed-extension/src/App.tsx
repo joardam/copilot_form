@@ -2,6 +2,7 @@ import { useState } from 'react';
 import './App.css';
 import Form from './pages/Form/Form';
 import Ods from './pages/Ods';
+import Consultas from './pages/Consultas';
 
 function App() {
   const [currentButton, setCurrentButton] = useState(0);
@@ -50,6 +51,8 @@ function App() {
         <div>
           {currentButton === 0 && <Form />}
           {currentButton === 2 && <Ods/>}
+          {currentButton === 1 && <Consultas/>}
+
         </div>
       </div>
     </div>
