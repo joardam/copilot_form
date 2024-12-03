@@ -14,9 +14,37 @@ const Chat: React.FC<ChatProps> = ({ messages, setMessages }) => {
 
   const [newMessage, setNewMessage] = useState("");
   
+  const sendMessageToServer = async (question: string): Promise<any> => {
+    try {
+      const response = await fetch('http://localhost:3001/api/ask-ai', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ question }),
+      });
+  
+      if (response.ok) {
+        console.log('Pergunta enviada com sucesso');
+  
+        // Aguarda a conversão da resposta para JSON
+        const data = await response.json();
+        return data;
+  
+      } else {
+        console.error('Erro ao enviar a pergunta');
+        return { status: 'error', message: 'Erro na comunicação com o servidor' };
+      }
+    } catch (error) {
+      console.error('Erro ao enviar a pergunta:', error);
+      return { status: 'error', message: error };
+    }
+  };
   
 
-  const sendMessage = (e : any) => {
+  
+
+  const sendMessage = async (e : any) => {
     e.preventDefault();
     if (newMessage.trim() === "") return;
 
@@ -30,10 +58,14 @@ const Chat: React.FC<ChatProps> = ({ messages, setMessages }) => {
     setMessages([...messages, message]);
     setNewMessage("");
 
+    const botText = await sendMessageToServer(newMessage);
+    console.log(botText);
+
+
     setTimeout(() => {
       const botResponse = {
         id: messages.length + 2,
-        text: "Obrigado pela sua mensagem! Esta é uma resposta automática.",
+        text: botText.ai_response,
         sender: "bot",
         timestamp: new Date().toLocaleTimeString()
       };
