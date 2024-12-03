@@ -1,0 +1,51 @@
+**Ficha Médica - Paciente Fictício**  
+
+**Nome do Paciente:** João Silva  
+**Data de Atendimento:** 29/11/2024  
+
+---
+
+### **Dados Clínicos**  
+- **Anamnese:**  
+  Paciente relata febre alta (39°C) há três dias, dores musculares intensas, cefaleia, dor retro-orbital e manchas vermelhas no corpo. Refere fadiga, sensação de corpo mole e inapetência. Sem histórico de comorbidades. Relata viagem recente para região endêmica de dengue.  
+
+- **Peso:** 70 kg  
+- **Altura:** 1,75 m  
+- **Temperatura:** 39°C  
+- **Frequência Respiratória (freqres):** 24 rpm (taquipneia leve)  
+- **Frequência Cardíaca (freqcar):** 98 bpm (taquicardia leve)  
+- **Pressão Arterial Sistólica (pas):** 110 mmHg  
+- **Pressão Arterial Diastólica (pad):** 70 mmHg  
+
+---
+
+### **Exame Físico**  
+- **Aspecto Geral:** Paciente alerta, consciente, mas visivelmente cansado e febril.  
+- **Pele:**  
+  - Presença de exantema maculopapular difuso em tronco e membros.  
+  - Teste do laço positivo.  
+  - Pele quente ao toque, sem sinais de cianose.  
+- **Cabeça e Pescoço:**  
+  - Hiperemia conjuntival discreta.  
+  - Sensibilidade à palpação da região frontal e periorbital.  
+- **Abdômen:**  
+  - Leve dor à palpação em região epigástrica e mesogástrica.  
+  - Ausência de hepatomegalia ou sinais de peritonite.  
+- **Mucosas:** Ligeiramente hipocoradas, sem sangramentos visíveis.  
+- **Sistema Respiratório:** Sem sinais de desconforto, ausculta pulmonar limpa.  
+- **Sistema Cardiovascular:**  
+  - Pulsos periféricos presentes, rítmicos e simétricos.  
+  - Sem sopros cardíacos.  
+- **Sistema Neurológico:** Orientado no tempo e espaço, sem déficits neurológicos aparentes.  
+
+---
+
+### **Impressão Diagnóstica**  
+- **Suspeita Clínica:** Dengue clássica.  
+
+**Recomendações:**  
+- **Exames:** Hemograma, sorologia para dengue (NS1, IgM e IgG), função hepática e renal.  
+- **Tratamento:** Hidratação rigorosa (oral ou intravenosa, dependendo da tolerância oral), sintomáticos para dor e febre (paracetamol, evitando AINEs).  
+- **Orientações:** Monitorar sinais de alerta (sangramentos, dor abdominal intensa, hipotensão).  
+
+Caso precise complementar a ficha ou ajustar algo, é só pedir! 😊
