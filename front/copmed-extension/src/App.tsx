@@ -5,13 +5,15 @@ import Chat from './modules/Chat/chat';
 
 
 function App() {
+  const [anamneseData, setAnamneseData] = useState('');
 
 
-  const [inputData, setInputData] = useState("");
-
+  
+  const [exameFData, setExameFData] = useState('');
   const [messages, setMessages] = useState([
     { id: 1, text: "Olá! Como posso ajudar?", sender: "bot", timestamp: new Date().toLocaleTimeString() },
   ]);
+
 
 
   const sendExtractedDataToServer = async (extractedData: any) => {
@@ -68,6 +70,8 @@ function App() {
   };
 
 
+ 
+
   return (
     <div style={{
       display: 'flex',
@@ -76,34 +80,60 @@ function App() {
       width: '90%',
       margin: '0 auto',
       height: '100vh',
-      gap: '200px'
+      gap: '500px'
     }}>
       <div style={{
-        display: 'flex',
-        justifyContent: 'center',
-        width: '90%',
-        margin: '0 auto',
-        alignItems: 'center',
-        gap: '200px',
+         display: 'flex',
+         flexDirection: 'row', // Corrigido o uso de 'flex-row'
+         width: '90%',
+         margin: '0 auto',
+         gap: '400px',
+         alignItems: 'flex-start', // Garante que os itens fiquem no topo
+        
 
       }}>
 
-        <div style={{ flexBasis: '20%', flexShrink: 0 }}>
-          <label>Anamnese</label>
-          <textarea
+        <div style={{
+          display: 'flex', 
+          flexDirection: 'column', 
+          gap: '0px',
+          flexBasis: '0%', 
+          flexShrink: 0, 
+          alignItems: 'flex-start', 
+          flexGrow: 0, // Impede que cresça
+          minHeight: '200px', // Define um tamanho mínimo
+          
+        }}>
+          <label style={{ display: 'inline-block' , textAlign: 'left' ,width: '100%' ,
+            whiteSpace: 'nowrap' }} >Anamnese</label>
+            <textarea
             placeholder="Digite a Anamnese"
-            value={inputData}
-            onChange={(e) => setInputData(e.target.value)}
+            value={anamneseData}
+            onChange={(e) => setAnamneseData(e.target.value)}
             style={{
               width: '300%', height: '200px', boxSizing: 'border-box',
               resize: 'none',
             }}
+            />
 
-
-
+          
+          <label style={{ display: 'inline-block' , textAlign: 'left' ,width: '100%' ,
+            whiteSpace: 'nowrap' }}>Detalhes do Exame Físico</label>
+          <textarea
+            placeholder="Digite o exame físico"
+            value={exameFData}
+            onChange={(e) => setExameFData(e.target.value)}
+            style={{
+              width: '300%', height: '200px', boxSizing: 'border-box',
+              resize: 'none',
+            }}
+            
           />
-
+           
+          
+         
         </div>
+        
 
         <div >
           <label>Peso</label>
