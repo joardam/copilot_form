@@ -15,19 +15,23 @@ CORS(app)  # Enable CORS to allow requests from your React app
 def receive_extracted_data():
     try:
         # Receber os dados do front-end
+         # Receber os dados do front-end
         data = request.json
         
-        # Imprimir dados recebidos
-        # print("Dados recebidos do front-end:")
-        # print(json.dumps(data, indent=2, ensure_ascii=False))
-        
-        # Preparar o texto para enviar para a IA
-        formatted_patient_data = "Dados do paciente:\n"
-        for item in data:
-            formatted_patient_data += f"{item['role']}: {item['text']}\n"
+        # Formatar os dados recebidos para exibição
+        def format_data(data, prefix=""):
+            formatted = ""
+            if isinstance(data, dict):
+                for key, value in data.items():
+                    if isinstance(value, dict):
+                        formatted += format_data(value, prefix=f"{prefix}{key}.")
+                    else:
+                        formatted += f"{prefix}{key}: {value}\n"
+            return formatted
+
         
         # Adicionar os dados do paciente à conversa
-        openai_connection.messages.append({"role": "user", "content": formatted_patient_data})
+        openai_connection.messages.append({"role": "user", "content": format_data(data)})
         
         # Obter resposta da IA
         completion = openai.chat.completions.create(

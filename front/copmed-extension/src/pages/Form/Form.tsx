@@ -37,15 +37,19 @@ function Form() {
   ]);
 
   const combineData = () => {
+    // Remove chaves com valores vazios
+    const filterEmptyValues = (obj: any) =>
+      Object.fromEntries(Object.entries(obj).filter(([_, v]) => v !== ''));
+  
     return {
-      name,
-      date,
-      anamneseData,
-      exameFData,
-      conclusaoData,
-      diagnosticData,
+      ...(name && { name }),
+      ...(date && { date }),
+      ...(anamneseData && { anamneseData }),
+      ...(exameFData && { exameFData }),
+      ...(conclusaoData && { conclusaoData }),
+      diagnosticData: filterEmptyValues(diagnosticData), // Filtra os campos vazios de diagnosticData
     };
-  }
+  };
   
 
 
